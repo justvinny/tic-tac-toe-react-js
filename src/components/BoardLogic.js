@@ -16,9 +16,9 @@ const checkWinner = (board) => {
 const displayWinner = (isTurn, score, setScore) => {
     let winner = ((isTurn) ? "X" : "O");
     let scoreCopy = {...score};
-    let winnerScore = winner === scoreCopy.x[0] ? scoreCopy.x : scoreCopy.o;
-    winnerScore[1]++;
-    setScore({scoreCopy});
+    let winnerScore = winner === scoreCopy.x.name ? scoreCopy.x : scoreCopy.o;
+    winnerScore.score++;
+    setScore({...score, scoreCopy});
     alert("Winner is " + winner);
     return true;
 };
